@@ -39,12 +39,38 @@ namespace Usa.Mil.Dtg
         public static IMilitaryDateTimeOffset GetMilDateTimeOffsetFromString(string dateTimeGroupString)
         {
             IDtgTransform dT = new DtgTransform(dateTimeGroupString);
-            DateTime date = new DateTime(dT.Year, dT.Month, dT.Day, dT.Hour, dT.Minute, dT.Second);
+            DateTime date = GetDateTime(dT);
             IMilitaryDateTimeOffset mdto = new MilitaryDateTimeOffset();
             IMilitaryTimeZone mtz = DateTimeMilitary.MilitaryTimeZones.Where(i => i.Abbreviation.Equals(dT.MilitaryTimeZoneAbbreviation)).FirstOrDefault();
             mdto.MilitaryTimeZone = mtz;
             mdto.MilitaryDateTimeOffset = new DateTimeOffset(date, mtz.TimeZoneInfo.BaseUtcOffset);
             return mdto;
         }
+
+        /// <summary>
+        /// Get DateTime either with the time or no time part as provided.
+        /// </summary>
+        /// <param name="dtgTransform"></param>
+        /// <returns></returns>
+        private static DateTime GetDateTime(IDtgTransform dtgTransform)
+        {
+            IDtgTransform dT = dtgTransform;
+            DateTime date;
+            if(dT.Year != 0 && dT.Month != 0 && dT.Day != 0 && dT.Hour == 0 && dT.Minute == 0 && dT.Second == 0)
+            {
+                date = new DateTime(dT.Year, dT.Month, dT.Day);                
+            }
+            else if(dT.Year != 0 && dT.Month != 0 && dT.Day != 0 && dT.Hour != 0 && dT.Minute != 0 && dT.Second != 0)
+            {
+                date = new DateTime(dT.Year, dT.Month, dT.Day, dT.Hour, dT.Minute, dT.Second);                
+            }
+            else
+            {
+                date = new DateTime();                
+            }
+            return date;
+            
+        }
+
     }
 }

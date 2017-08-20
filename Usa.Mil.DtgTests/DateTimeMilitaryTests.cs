@@ -42,12 +42,15 @@ namespace Usa.Mil.Dtg.Tests
             Assert.AreEqual(2017, milDtgOffset.MilitaryDateTimeOffset.Year);
         }
 
-        [TestMethod()]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public void GetMilDateTimeOffsetFromString_ThrowsArgumentOutOfRangeException()
+        [TestMethod()]        
+        public void GetMilDateTimeOffsetFromString_NotValidDtgStringTest()
         {
             string dtgString = dtgString = "7ZOCT17"; // Time format is not correct 7 should be 07.  Only valid DTG format supported.
-            IMilitaryDateTimeOffset milDtgOffset = milDtgOffset = DateTimeMilitary.GetMilDateTimeOffsetFromString(dtgString);            
+            IMilitaryDateTimeOffset milDtgOffset = milDtgOffset = DateTimeMilitary.GetMilDateTimeOffsetFromString(dtgString);
+            Assert.AreEqual(1, milDtgOffset.MilitaryDateTimeOffset.Day); //Day one when not valid
+            Assert.AreEqual(Military.Zulu, milDtgOffset.MilitaryTimeZone.MilitarTimeZoneName); // Zulu time zone was provided.
+            Assert.AreEqual(1, milDtgOffset.MilitaryDateTimeOffset.Month); //Month one when not valid
+            Assert.AreEqual(1, milDtgOffset.MilitaryDateTimeOffset.Year); //Year 1 when not valid.
         }
     }
 }
