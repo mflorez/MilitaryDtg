@@ -41,12 +41,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DateTimeMilitary.cs" />
+    <Compile Include="DtgTransform.cs" />
+    <Compile Include="IDtgTransform.cs" />
     <Compile Include="IMilitaryDateTimeOffset.cs" />
     <Compile Include="IMilitaryTimeZone.cs" />
     <Compile Include="MilitaryDateTimeOffset.cs" />
     <Compile Include="MilitaryTimeZone.cs" />
     <Compile Include="Military.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StringExtensions.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

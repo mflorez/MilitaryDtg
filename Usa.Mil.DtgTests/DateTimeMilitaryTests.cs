@@ -12,14 +12,27 @@ namespace Usa.Mil.Dtg.Tests
     public class DateTimeMilitaryTests
     {
         [TestMethod()]
-        public void GetMilitaryDateTimeOffsetTest()
+        public void GetMilDateTimeOffsetTest()
         {
-            string milZoneAbbr = Military.TimeZoneAbbreviationToOffsetVal.C.ToString();
-            string milZoneName = Military.Charlie;
+            string milZoneAbbr = Military.TimeZoneAbbreviationToOffsetVal.C.ToString();            
             DateTime dt = new DateTime(2012, 4, 14, 7, 8, 11);
-            IMilitaryDateTimeOffset milDtgOffset = DateTimeMilitary.GetMilitaryDateTimeOffset(dt, milZoneAbbr);
-            Assert.AreEqual(milZoneName, milDtgOffset.MilitaryTimeZone.MilitarTimeZoneName);
-            Assert.AreEqual(milZoneAbbr, milDtgOffset.MilitaryTimeZone.Abbreviation);            
+            IMilitaryDateTimeOffset milDtgOffset = DateTimeMilitary.GetMilDateTimeOffset(dt, milZoneAbbr);
+            Assert.AreEqual(Military.Charlie, milDtgOffset.MilitaryTimeZone.MilitarTimeZoneName);
+            Assert.AreEqual(milZoneAbbr, milDtgOffset.MilitaryTimeZone.Abbreviation);
+        }
+
+        [TestMethod()]
+        public void GetMilDateTimeOffsetFromStringTest()
+        {
+            string dtgString = "07142509 Z OCT 2017";
+            IMilitaryDateTimeOffset milDtgOffset = DateTimeMilitary.GetMilDateTimeOffsetFromString(dtgString);
+            Assert.AreEqual(7, milDtgOffset.MilitaryDateTimeOffset.Day);
+            Assert.AreEqual(14, milDtgOffset.MilitaryDateTimeOffset.Hour);
+            Assert.AreEqual(25, milDtgOffset.MilitaryDateTimeOffset.Minute);
+            Assert.AreEqual(9, milDtgOffset.MilitaryDateTimeOffset.Second);
+            Assert.AreEqual(Military.Zulu, milDtgOffset.MilitaryTimeZone.MilitarTimeZoneName);
+            Assert.AreEqual(10, milDtgOffset.MilitaryDateTimeOffset.Month);
+            Assert.AreEqual(2017, milDtgOffset.MilitaryDateTimeOffset.Year);
         }
     }
 }
