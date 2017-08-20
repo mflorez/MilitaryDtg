@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ namespace Usa.Mil.Dtg
 {
     public static class Military
     {
+        #region Military Phonetic Alphabet properties.
         public static string Alpha { get { return "Alpha"; } }
         public static string Bravo { get { return "Bravo"; } }
         public static string Charlie { get { return "Charlie"; } }
@@ -33,7 +35,12 @@ namespace Usa.Mil.Dtg
         public static string Xray { get { return "X-ray"; } }
         public static string Yankee { get { return "Yankee"; } }
         public static string Zulu { get { return "Zulu"; } }
-
+        #endregion
+        
+        #region Military Time Zone Names
+        /// <summary>
+        /// Military time zone names
+        /// </summary>
         public static IReadOnlyCollection<String> MilitaryZoneNames = new String[]
         {
             Military.Alpha,
@@ -62,7 +69,12 @@ namespace Usa.Mil.Dtg
             Military.Yankee,
             Military.Zulu
         };
+        #endregion
 
+        #region Time Zone Letter Time Offset Relationship
+        /// <summary>
+        /// Time zone abbreviation to time offset values
+        /// </summary>
         public enum TimeZoneAbbreviationToOffsetVal
         {
             A = 1,
@@ -92,6 +104,16 @@ namespace Usa.Mil.Dtg
             Z = 0
         }
 
+        #endregion
+       
+        /// <summary>
+        /// Global time zones
+        /// </summary>
         public static IReadOnlyCollection<TimeZoneInfo> SystemTimeZones = TimeZoneInfo.GetSystemTimeZones();
+
+        /// <summary>
+        /// Abbreviated month names
+        /// </summary>
+        public static List<string> AbbreviatedMonthNames = DateTimeFormatInfo.CurrentInfo.AbbreviatedMonthNames.ToList<string>();
     }
 }

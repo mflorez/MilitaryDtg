@@ -38,10 +38,10 @@ namespace Usa.Mil.Dtg
 
         public static IMilitaryDateTimeOffset GetMilDateTimeOffsetFromString(string dateTimeGroupString)
         {
-            IDtgTransform dtgTransform = new DtgTransform(dateTimeGroupString);
-            DateTime date = new DateTime(dtgTransform.Year, dtgTransform.Month, dtgTransform.Day, dtgTransform.Hour, dtgTransform.Minute, dtgTransform.Second);
+            IDtgTransform dT = new DtgTransform(dateTimeGroupString);
+            DateTime date = new DateTime(dT.Year, dT.Month, dT.Day, dT.Hour, dT.Minute, dT.Second);
             IMilitaryDateTimeOffset mdto = new MilitaryDateTimeOffset();
-            IMilitaryTimeZone mtz = DateTimeMilitary.MilitaryTimeZones.Where(i => i.Abbreviation.Equals(dtgTransform.MilitaryTimeZoneAbbreviation)).FirstOrDefault();
+            IMilitaryTimeZone mtz = DateTimeMilitary.MilitaryTimeZones.Where(i => i.Abbreviation.Equals(dT.MilitaryTimeZoneAbbreviation)).FirstOrDefault();
             mdto.MilitaryTimeZone = mtz;
             mdto.MilitaryDateTimeOffset = new DateTimeOffset(date, mtz.TimeZoneInfo.BaseUtcOffset);
             return mdto;
