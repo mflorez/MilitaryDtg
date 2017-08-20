@@ -75,18 +75,26 @@ namespace Usa.Mil.Dtg
 
             this.DtgStringValue = dateTimeGroupString;
             string dtgVal = dateTimeGroupString.Replace(" ", String.Empty);
+
             string dayTimePart = new string(dtgVal.TakeWhile(c => !Char.IsLetter(c)).ToArray());
-            SetDayHourMinuteSecond(dayTimePart);
+            if(!String.IsNullOrEmpty(dayTimePart))
+                SetDayHourMinuteSecond(dayTimePart);
 
             string timeZoneMonthPart = new string(dtgVal.Remove(0, dayTimePart.Length).TakeWhile(c => Char.IsLetter(c)).ToArray());
-            string timeZonePart = timeZoneMonthPart.Substring(0, 1);
-            SetTimeZonePart(timeZonePart);
+            if (!String.IsNullOrEmpty(timeZoneMonthPart))
+            {
+                string timeZonePart = timeZoneMonthPart.Substring(0, 1);
+                if (!String.IsNullOrEmpty(timeZonePart))
+                    SetTimeZonePart(timeZonePart);
 
-            string monthPart = timeZoneMonthPart.Remove(0, timeZonePart.Length);
-            SetMonthPart(monthPart);
+                string monthPart = timeZoneMonthPart.Remove(0, timeZonePart.Length);
+                if (!String.IsNullOrEmpty(monthPart))
+                    SetMonthPart(monthPart);
+            }                        
 
             string yearPart = dtgVal.Remove(0, dayTimePart.Length + timeZoneMonthPart.Length);
-            SetYearPart(yearPart);
+            if (!String.IsNullOrEmpty(yearPart))
+                SetYearPart(yearPart);
         }
 
         /// <summary>

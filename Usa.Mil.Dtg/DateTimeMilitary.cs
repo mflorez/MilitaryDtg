@@ -30,9 +30,12 @@ namespace Usa.Mil.Dtg
         public static IMilitaryDateTimeOffset GetMilDateTimeOffset(DateTime date, string militaryTimeZoneAbbreviation)
         {
             IMilitaryDateTimeOffset mdto = new MilitaryDateTimeOffset();
-            IMilitaryTimeZone mtz = DateTimeMilitary.MilitaryTimeZones.Where(i => i.Abbreviation.Equals(militaryTimeZoneAbbreviation)).FirstOrDefault();
-            mdto.MilitaryTimeZone = mtz;
-            mdto.MilitaryDateTimeOffset = new DateTimeOffset(date, mtz.TimeZoneInfo.BaseUtcOffset);
+            if(date.Year != 1)
+            {
+                IMilitaryTimeZone mtz = DateTimeMilitary.MilitaryTimeZones.Where(i => i.Abbreviation.Equals(militaryTimeZoneAbbreviation)).FirstOrDefault();
+                mdto.MilitaryTimeZone = mtz;
+                mdto.MilitaryDateTimeOffset = new DateTimeOffset(date, mtz.TimeZoneInfo.BaseUtcOffset);
+            }            
             return mdto;
         }
 
@@ -41,9 +44,12 @@ namespace Usa.Mil.Dtg
             IDtgTransform dT = new DtgTransform(dateTimeGroupString);
             DateTime date = GetDateTime(dT);
             IMilitaryDateTimeOffset mdto = new MilitaryDateTimeOffset();
-            IMilitaryTimeZone mtz = DateTimeMilitary.MilitaryTimeZones.Where(i => i.Abbreviation.Equals(dT.MilitaryTimeZoneAbbreviation)).FirstOrDefault();
-            mdto.MilitaryTimeZone = mtz;
-            mdto.MilitaryDateTimeOffset = new DateTimeOffset(date, mtz.TimeZoneInfo.BaseUtcOffset);
+            if(date.Year != 1)
+            {
+                IMilitaryTimeZone mtz = DateTimeMilitary.MilitaryTimeZones.Where(i => i.Abbreviation.Equals(dT.MilitaryTimeZoneAbbreviation)).FirstOrDefault();
+                mdto.MilitaryTimeZone = mtz;
+                mdto.MilitaryDateTimeOffset = new DateTimeOffset(date, mtz.TimeZoneInfo.BaseUtcOffset);
+            }            
             return mdto;
         }
 
