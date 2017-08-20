@@ -44,7 +44,7 @@ namespace Usa.Mil.Dtg.Tests
 
         [TestMethod()]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public void GetMilDateTimeOffsetFromStringTestNotAValidDate()
+        public void GetMilDateTimeOffsetFromString_ThrowsArgumentOutOfRangeException()
         {
             string dtgString = dtgString = "7ZOCT17"; // Time format is not correct 7 should be 07.  Only valid DTG format supported.
             IMilitaryDateTimeOffset milDtgOffset = milDtgOffset = DateTimeMilitary.GetMilDateTimeOffsetFromString(dtgString);            
