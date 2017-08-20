@@ -43,9 +43,9 @@
     <Compile Include="DateTimeMilitary.cs" />
     <Compile Include="DtgTransform.cs" />
     <Compile Include="IDtgTransform.cs" />
-    <Compile Include="IMilitaryDateTimeOffset.cs" />
+    <Compile Include="IMilitaryDate.cs" />
     <Compile Include="IMilitaryTimeZone.cs" />
-    <Compile Include="MilitaryDateTimeOffset.cs" />
+    <Compile Include="MilitaryDate.cs" />
     <Compile Include="MilitaryTimeZone.cs" />
     <Compile Include="Military.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Usa.Mil.Dtg
 {
-    public interface IMilitaryDateTimeOffset
+    public interface IMilitaryDate
     {
         IMilitaryTimeZone MilitaryTimeZone { get; set; }
         DateTimeOffset MilitaryDateTimeOffset { get; set; }
