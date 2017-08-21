@@ -26,20 +26,26 @@ namespace Usa.Mil.Dtg.Tests
         {
             string dtgString = "07142509 Z OCT 2017";
             IMilDate mdto = DateTimeMil.GetMilDateFromString(dtgString);
-            Assert.AreEqual(7, mdto.MilDateOffset.Value.Day);
-            Assert.AreEqual(14, mdto.MilDateOffset.Value.Hour);
-            Assert.AreEqual(25, mdto.MilDateOffset.Value.Minute);
-            Assert.AreEqual(9, mdto.MilDateOffset.Value.Second);
-            Assert.AreEqual(Mil.Zulu, mdto.MilTimeZone.MilTimeZoneName);
-            Assert.AreEqual(10, mdto.MilDateOffset.Value.Month);
-            Assert.AreEqual(2017, mdto.MilDateOffset.Value.Year);
-
+            if (mdto.MilDateOffset.HasValue)
+            {
+                Assert.AreEqual(7, mdto.MilDateOffset.Value.Day);
+                Assert.AreEqual(14, mdto.MilDateOffset.Value.Hour);
+                Assert.AreEqual(25, mdto.MilDateOffset.Value.Minute);
+                Assert.AreEqual(9, mdto.MilDateOffset.Value.Second);
+                Assert.AreEqual(Mil.Zulu, mdto.MilTimeZone.MilTimeZoneName);
+                Assert.AreEqual(10, mdto.MilDateOffset.Value.Month);
+                Assert.AreEqual(2017, mdto.MilDateOffset.Value.Year);
+            }
+           
             dtgString = "07ZOCT17";
-            mdto = DateTimeMil.GetMilDateFromString(dtgString);
-            Assert.AreEqual(7, mdto.MilDateOffset.Value.Day);
-            Assert.AreEqual(Mil.Zulu, mdto.MilTimeZone.MilTimeZoneName);
-            Assert.AreEqual(10, mdto.MilDateOffset.Value.Month);
-            Assert.AreEqual(2017, mdto.MilDateOffset.Value.Year);            
+            if (mdto.MilDateOffset.HasValue)
+            {
+                mdto = DateTimeMil.GetMilDateFromString(dtgString);
+                Assert.AreEqual(7, mdto.MilDateOffset.Value.Day);
+                Assert.AreEqual(Mil.Zulu, mdto.MilTimeZone.MilTimeZoneName);
+                Assert.AreEqual(10, mdto.MilDateOffset.Value.Month);
+                Assert.AreEqual(2017, mdto.MilDateOffset.Value.Year);
+            }
         }
 
         [TestMethod()]        
