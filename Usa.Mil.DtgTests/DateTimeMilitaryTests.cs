@@ -39,19 +39,7 @@ namespace Usa.Mil.Dtg.Tests
             Assert.AreEqual(7, milDtgOffset.MilitaryDateTimeOffset.Day);
             Assert.AreEqual(Military.Zulu, milDtgOffset.MilitaryTimeZone.MilitarTimeZoneName);
             Assert.AreEqual(10, milDtgOffset.MilitaryDateTimeOffset.Month);
-            Assert.AreEqual(2017, milDtgOffset.MilitaryDateTimeOffset.Year);
-
-            //string milZoneAbbreviation = "C";
-            //DateTime dt = new DateTime(2012, 4, 14, 7, 8, 11);
-            //IMilitaryDateTimeOffset milDateTimeOffset = DateTimeMilitary.GetMilitaryDateTimeOffset(dt, milZoneAbbreviation);
-            //Console.WriteLine(milDateTimeOffset.MilitaryTimeZone.MilitarTimeZoneName);
-
-            //Console.WriteLine(milDateTimeOffset.MilitaryDateTimeOffset.ToString("ddHHMMss " + milDateTimeOffset.MilitaryTimeZone.Abbreviation + " MMM yyyy").ToUpper());
-            //Console.ReadLine();
-
-            // ddhhmmss Z MMM YYYY
-
-            Console.WriteLine((milDtgOffset.MilitaryDateTimeOffset.ToString("ddHHMMss " + milDtgOffset.MilitaryTimeZone.Abbreviation + " MMM yyyy").ToUpper()));
+            Assert.AreEqual(2017, milDtgOffset.MilitaryDateTimeOffset.Year);            
         }
 
         [TestMethod()]        

@@ -45,6 +45,7 @@
     <Compile Include="IDtgTransform.cs" />
     <Compile Include="IMilitaryDate.cs" />
     <Compile Include="IMilitaryTimeZone.cs" />
+    <Compile Include="MilDateFormatProvider.cs" />
     <Compile Include="MilitaryDate.cs" />
     <Compile Include="MilitaryTimeZone.cs" />
     <Compile Include="Military.cs" />
