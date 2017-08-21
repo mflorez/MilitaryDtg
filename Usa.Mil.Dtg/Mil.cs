@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Usa.Mil.Dtg
 {
-    public static class Military
+    public static class Mil
     {
         #region Military Phonetic Alphabet properties.
         public static string Alpha { get { return "Alpha"; } }
@@ -41,33 +41,33 @@ namespace Usa.Mil.Dtg
         /// <summary>
         /// Military time zone names
         /// </summary>
-        public static IReadOnlyCollection<String> MilitaryZoneNames = new String[]
+        public static IReadOnlyCollection<String> MilZoneNames = new String[]
         {
-            Military.Alpha,
-            Military.Bravo,
-            Military.Charlie,
-            Military.Delta,
-            Military.Echo,
-            Military.Foxtrot,
-            Military.Golf,
-            Military.Hotel,
-            Military.India,
-            Military.Kilo,
-            Military.Lima,
-            Military.Mike,
-            Military.November,
-            Military.Oscar,
-            Military.Papa,
-            Military.Quebec,
-            Military.Romeo,
-            Military.Sierra,
-            Military.Tango,
-            Military.Uniform,
-            Military.Victor,
-            Military.Whiskey,
-            Military.Xray,
-            Military.Yankee,
-            Military.Zulu
+            Mil.Alpha,
+            Mil.Bravo,
+            Mil.Charlie,
+            Mil.Delta,
+            Mil.Echo,
+            Mil.Foxtrot,
+            Mil.Golf,
+            Mil.Hotel,
+            Mil.India,
+            Mil.Kilo,
+            Mil.Lima,
+            Mil.Mike,
+            Mil.November,
+            Mil.Oscar,
+            Mil.Papa,
+            Mil.Quebec,
+            Mil.Romeo,
+            Mil.Sierra,
+            Mil.Tango,
+            Mil.Uniform,
+            Mil.Victor,
+            Mil.Whiskey,
+            Mil.Xray,
+            Mil.Yankee,
+            Mil.Zulu
         };
         #endregion
 

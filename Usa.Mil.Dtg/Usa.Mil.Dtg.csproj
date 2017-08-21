@@ -48,7 +48,7 @@
     <Compile Include="MilDateFormatProvider.cs" />
     <Compile Include="MilDate.cs" />
     <Compile Include="MilTimeZone.cs" />
-    <Compile Include="Military.cs" />
+    <Compile Include="Mil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StringExtensions.cs" />
   </ItemGroup>

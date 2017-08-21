@@ -15,6 +15,6 @@ namespace Usa.Mil.Dtg
         int Hour { get; set; }
         int Minute { get; set; }
         int Second { get; set; }
-        string MilitaryTimeZoneAbbreviation { get; set; }             
+        string MilTimeZoneAbbreviation { get; set; }             
     }
 }

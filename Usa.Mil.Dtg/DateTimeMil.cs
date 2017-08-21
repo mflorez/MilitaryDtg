@@ -8,32 +8,32 @@ namespace Usa.Mil.Dtg
 {
     public static class DateTimeMil
     {                       
-        private static IList<IMilTimeZone> militaryTimeZones;
-        public static IList<IMilTimeZone> MilitaryTimeZones
+        private static IList<IMilTimeZone> milTimeZones;
+        public static IList<IMilTimeZone> MilTimeZones
         {
-            get { return militaryTimeZones; }
+            get { return milTimeZones; }
         }
 
         static DateTimeMil()
         {
-            militaryTimeZones = new List<IMilTimeZone>();
-            foreach (var value in Enum.GetValues(typeof(Military.TimeZoneAbbreviationToOffsetVal)))
+            milTimeZones = new List<IMilTimeZone>();
+            foreach (var value in Enum.GetValues(typeof(Mil.TimeZoneAbbreviationToOffsetVal)))
             {
                 int intVal = (int)value;
                 string strVal = value.ToString();
-                TimeZoneInfo tZ = Military.SystemTimeZones.Where(i => i.BaseUtcOffset.Hours.Equals(intVal)).FirstOrDefault();                
-                String mTName = Military.MilitaryZoneNames.Where(z => z.StartsWith(strVal, StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault();
-                militaryTimeZones.Add(new MilTimeZone() { TimeZoneInfo = tZ, Abbreviation = strVal, Offset = intVal, MilTimeZoneName = mTName });
+                TimeZoneInfo tZ = Mil.SystemTimeZones.Where(i => i.BaseUtcOffset.Hours.Equals(intVal)).FirstOrDefault();                
+                String mTName = Mil.MilZoneNames.Where(z => z.StartsWith(strVal, StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault();
+                milTimeZones.Add(new MilTimeZone() { TimeZoneInfo = tZ, Abbreviation = strVal, Offset = intVal, MilTimeZoneName = mTName });
             }
         }
 
-        public static IMilDate GetMilDate(DateTime? date, string militaryTimeZoneAbbreviation)
+        public static IMilDate GetMilDate(DateTime? date, string milTimeZoneAbbreviation)
         {
             IMilDate mdto = new MilDate();
             if(date.HasValue)
             {
-                IMilTimeZone mtz = MilitaryTimeZones.Where(i => i.Abbreviation.Equals(militaryTimeZoneAbbreviation)).FirstOrDefault();
-                mdto.MilitaryTimeZone = mtz;
+                IMilTimeZone mtz = MilTimeZones.Where(i => i.Abbreviation.Equals(milTimeZoneAbbreviation)).FirstOrDefault();
+                mdto.MilTimeZone = mtz;
                 mdto.MilDateOffset = new DateTimeOffset(date.Value, mtz.TimeZoneInfo.BaseUtcOffset);
             }            
             return mdto;
@@ -46,8 +46,8 @@ namespace Usa.Mil.Dtg
             IMilDate mdto = new MilDate();
             if(date.HasValue)
             {
-                IMilTimeZone mtz = MilitaryTimeZones.Where(i => i.Abbreviation.Equals(dT.MilitaryTimeZoneAbbreviation)).FirstOrDefault();
-                mdto.MilitaryTimeZone = mtz;
+                IMilTimeZone mtz = MilTimeZones.Where(i => i.Abbreviation.Equals(dT.MilTimeZoneAbbreviation)).FirstOrDefault();
+                mdto.MilTimeZone = mtz;
                 mdto.MilDateOffset = new DateTimeOffset(date.Value, mtz.TimeZoneInfo.BaseUtcOffset);
             }            
             return mdto;

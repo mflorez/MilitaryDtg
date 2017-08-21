@@ -8,7 +8,7 @@ namespace Usa.Mil.Dtg
 {
     public interface IMilDate
     {
-        IMilTimeZone MilitaryTimeZone { get; set; }
+        IMilTimeZone MilTimeZone { get; set; }
         DateTimeOffset? MilDateOffset { get; set; }
     }
 }

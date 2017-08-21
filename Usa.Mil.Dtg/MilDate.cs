@@ -14,7 +14,7 @@ namespace Usa.Mil.Dtg
             set;
         }
 
-        public IMilTimeZone MilitaryTimeZone
+        public IMilTimeZone MilTimeZone
         {
             get;
             set;

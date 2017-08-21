@@ -52,7 +52,7 @@ namespace Usa.Mil.Dtg
             set;
         }
 
-        public string MilitaryTimeZoneAbbreviation
+        public string MilTimeZoneAbbreviation
         {
             get;
             set;
@@ -176,7 +176,7 @@ namespace Usa.Mil.Dtg
 
             if (timeZonePart.Length == 1 && Char.IsLetter(timeZonePart[0])) // It is one character and it is a letter.
             {
-                this.MilitaryTimeZoneAbbreviation = timeZonePart;
+                this.MilTimeZoneAbbreviation = timeZonePart;
             }
         }
 
@@ -190,8 +190,8 @@ namespace Usa.Mil.Dtg
 
             if (monthPart.Length == 3) // Three-letter month name abbreviation.
             {
-                // var pair = Military.AbbreviatedMonthNames.Select((Value, Index) => new { Value, Index }).Single(p => p.Value.Equals(monthPart, StringComparison.InvariantCultureIgnoreCase));
-                var monthIdx = Military.AbbreviatedMonthNames.FindIndex(x => x.Equals(monthPart, StringComparison.InvariantCultureIgnoreCase));
+                // var pair = Mil.AbbreviatedMonthNames.Select((Value, Index) => new { Value, Index }).Single(p => p.Value.Equals(monthPart, StringComparison.InvariantCultureIgnoreCase));
+                var monthIdx = Mil.AbbreviatedMonthNames.FindIndex(x => x.Equals(monthPart, StringComparison.InvariantCultureIgnoreCase));
                 this.Month = monthIdx + 1;
             }
         }
