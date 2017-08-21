@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace Usa.Mil.Dtg
 {
-    sealed class MilitaryDate : IMilitaryDate
+    sealed class MilDate : IMilDate
     {
-        public IMilitaryTimeZone MilitaryTimeZone
+        public DateTimeOffset? MilDateOffset
         {
             get;
             set;
         }
 
-        DateTimeOffset IMilitaryDate.MilitaryDateTimeOffset
+        public IMilTimeZone MilitaryTimeZone
         {
             get;
             set;
-        }
+        }       
     }
 }

@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Usa.Mil.Dtg.DateTimeMil" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAEAAAAAAAAAIIAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DateTimeMil.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Usa.Mil.Dtg.DtgTransform" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAJAAABAAgAAAAAAIAAAAAECIEMACAAAACAAA=</HashCode>
+      <FileName>DtgTransform.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Usa.Mil.Dtg.MilDateFormatProvider" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAggAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MilDateFormatProvider.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Usa.Mil.Dtg.Military" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAaAAEAAAKVgAQgAACFwAAIAQABAAJAAAAIAABAAQgA=</HashCode>
+      <FileName>Military.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Usa.Mil.Dtg.MilDate" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MilDate.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Usa.Mil.Dtg.MilTimeZone" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAhAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>MilTimeZone.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Usa.Mil.Dtg.StringExtensions" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>StringExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Usa.Mil.Dtg.IDtgTransform" Collapsed="true">
+    <Position X="0.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAJAAAAAAgAAAAAAIAAAAAACIEIAAAAAAAAAA=</HashCode>
+      <FileName>IDtgTransform.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Usa.Mil.Dtg.IMilDate" Collapsed="true">
+    <Position X="2.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IMilDate.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Usa.Mil.Dtg.IMilTimeZone" Collapsed="true">
+    <Position X="4" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAhAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>IMilTimeZone.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

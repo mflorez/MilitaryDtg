@@ -6,49 +6,49 @@ using System.Threading.Tasks;
 
 namespace Usa.Mil.Dtg
 {
-    public static class DateTimeMilitary
+    public static class DateTimeMil
     {                       
-        private static IList<IMilitaryTimeZone> militaryTimeZones;
-        public static IList<IMilitaryTimeZone> MilitaryTimeZones
+        private static IList<IMilTimeZone> militaryTimeZones;
+        public static IList<IMilTimeZone> MilitaryTimeZones
         {
             get { return militaryTimeZones; }
         }
 
-        static DateTimeMilitary()
+        static DateTimeMil()
         {
-            militaryTimeZones = new List<IMilitaryTimeZone>();
+            militaryTimeZones = new List<IMilTimeZone>();
             foreach (var value in Enum.GetValues(typeof(Military.TimeZoneAbbreviationToOffsetVal)))
             {
                 int intVal = (int)value;
                 string strVal = value.ToString();
                 TimeZoneInfo tZ = Military.SystemTimeZones.Where(i => i.BaseUtcOffset.Hours.Equals(intVal)).FirstOrDefault();                
                 String mTName = Military.MilitaryZoneNames.Where(z => z.StartsWith(strVal, StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault();
-                militaryTimeZones.Add(new MilitaryTimeZone() { TimeZoneInfo = tZ, Abbreviation = strVal, Offset = intVal, MilitarTimeZoneName = mTName });
+                militaryTimeZones.Add(new MilTimeZone() { TimeZoneInfo = tZ, Abbreviation = strVal, Offset = intVal, MilTimeZoneName = mTName });
             }
         }
 
-        public static IMilitaryDate GetMilDate(DateTime date, string militaryTimeZoneAbbreviation)
+        public static IMilDate GetMilDate(DateTime? date, string militaryTimeZoneAbbreviation)
         {
-            IMilitaryDate mdto = new MilitaryDate();
-            if(date.Year != 1)
+            IMilDate mdto = new MilDate();
+            if(date.HasValue)
             {
-                IMilitaryTimeZone mtz = MilitaryTimeZones.Where(i => i.Abbreviation.Equals(militaryTimeZoneAbbreviation)).FirstOrDefault();
+                IMilTimeZone mtz = MilitaryTimeZones.Where(i => i.Abbreviation.Equals(militaryTimeZoneAbbreviation)).FirstOrDefault();
                 mdto.MilitaryTimeZone = mtz;
-                mdto.MilitaryDateTimeOffset = new DateTimeOffset(date, mtz.TimeZoneInfo.BaseUtcOffset);
+                mdto.MilDateOffset = new DateTimeOffset(date.Value, mtz.TimeZoneInfo.BaseUtcOffset);
             }            
             return mdto;
         }
 
-        public static IMilitaryDate GetMilDateFromString(string dateTimeGroupString)
+        public static IMilDate GetMilDateFromString(string dateTimeGroupString)
         {
             IDtgTransform dT = new DtgTransform(dateTimeGroupString);
-            DateTime date = GetDateTime(dT);
-            IMilitaryDate mdto = new MilitaryDate();
-            if(date.Year != 1)
+            DateTime? date = GetDateTime(dT);
+            IMilDate mdto = new MilDate();
+            if(date.HasValue)
             {
-                IMilitaryTimeZone mtz = MilitaryTimeZones.Where(i => i.Abbreviation.Equals(dT.MilitaryTimeZoneAbbreviation)).FirstOrDefault();
+                IMilTimeZone mtz = MilitaryTimeZones.Where(i => i.Abbreviation.Equals(dT.MilitaryTimeZoneAbbreviation)).FirstOrDefault();
                 mdto.MilitaryTimeZone = mtz;
-                mdto.MilitaryDateTimeOffset = new DateTimeOffset(date, mtz.TimeZoneInfo.BaseUtcOffset);
+                mdto.MilDateOffset = new DateTimeOffset(date.Value, mtz.TimeZoneInfo.BaseUtcOffset);
             }            
             return mdto;
         }
@@ -58,10 +58,10 @@ namespace Usa.Mil.Dtg
         /// </summary>
         /// <param name="dtgTransform"></param>
         /// <returns></returns>
-        private static DateTime GetDateTime(IDtgTransform dtgTransform)
+        private static DateTime? GetDateTime(IDtgTransform dtgTransform)
         {
             IDtgTransform dT = dtgTransform;
-            DateTime date;
+            DateTime? date;
             if(dT.Year != 0 && dT.Month != 0 && dT.Day != 0 && dT.Hour == 0 && dT.Minute == 0 && dT.Second == 0)
             {
                 date = new DateTime(dT.Year, dT.Month, dT.Day);                
@@ -72,7 +72,7 @@ namespace Usa.Mil.Dtg
             }
             else
             {
-                date = new DateTime();                
+                date = null;                
             }
             return date;
             

@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Usa.Mil.Dtg
 {
-    public interface IMilitaryTimeZone
+    public interface IMilTimeZone
     {
         int Offset { get; set; }
         string Abbreviation { get; set; }
-        string MilitarTimeZoneName { get; set; }
+        string MilTimeZoneName { get; set; }
         TimeZoneInfo TimeZoneInfo { get; set; }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Usa.Mil.Dtg
 {
-    public class MilitaryTimeZone : IMilitaryTimeZone
+    public class MilTimeZone : IMilTimeZone
     {
         public int Offset
         {
@@ -20,7 +20,7 @@ namespace Usa.Mil.Dtg
             set;
         }
 
-        public string MilitarTimeZoneName
+        public string MilTimeZoneName
         {
             get;
             set;
