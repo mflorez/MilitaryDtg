@@ -62,13 +62,10 @@ namespace Usa.Mil.Dtg
         {
             IDtgTransform dT = dtgTransform;
             DateTime? date;
-            if(dT.Year != 0 && dT.Month != 0 && dT.Day != 0 && dT.Hour == 0 && dT.Minute == 0 && dT.Second == 0)
+            bool isValid = (dT.Year != 0 && dT.Month != 0 && dT.Day != 0); 
+            if(isValid)
             {
-                date = new DateTime(dT.Year, dT.Month, dT.Day);                
-            }
-            else if(dT.Year != 0 && dT.Month != 0 && dT.Day != 0 && dT.Hour != 0 && dT.Minute != 0 && dT.Second != 0)
-            {
-                date = new DateTime(dT.Year, dT.Month, dT.Day, dT.Hour, dT.Minute, dT.Second);                
+                date = new DateTime(dT.Year, dT.Month, dT.Day, dT.Hour, dT.Minute, dT.Second);
             }
             else
             {

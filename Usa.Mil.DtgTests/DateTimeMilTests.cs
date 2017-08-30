@@ -46,6 +46,19 @@ namespace Usa.Mil.Dtg.Tests
                 Assert.AreEqual(10, mdto.MilDateOffset.Value.Month);
                 Assert.AreEqual(2017, mdto.MilDateOffset.Value.Year);
             }
+
+            dtgString = "071345CNOV17";
+            if (mdto.MilDateOffset.HasValue)
+            {
+                mdto = DateTimeMil.GetMilDateFromString(dtgString);
+                Assert.AreEqual(7, mdto.MilDateOffset.Value.Day);
+                Assert.AreEqual(13, mdto.MilDateOffset.Value.Hour);
+                Assert.AreEqual(45, mdto.MilDateOffset.Value.Minute);
+                Assert.AreEqual(0, mdto.MilDateOffset.Value.Second);
+                Assert.AreEqual(Mil.Charlie, mdto.MilTimeZone.MilTimeZoneName);
+                Assert.AreEqual(11, mdto.MilDateOffset.Value.Month);
+                Assert.AreEqual(2017, mdto.MilDateOffset.Value.Year);
+            }
         }
 
         [TestMethod()]        
