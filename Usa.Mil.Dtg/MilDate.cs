@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Usa.Mil.Dtg.Properties;
 
 namespace Usa.Mil.Dtg
 {
@@ -26,7 +27,7 @@ namespace Usa.Mil.Dtg
         /// <returns></returns>
         public override string ToString()
         {
-            string format = "{0:ddHHmmss dtz MMM yyyy}";
+            string format = "{0:ddHHmmss " + Settings.Default.DateTimeGroupTimeZoneFormatString + " MMM yyyy}";
             string mdtoString = String.Format(new MilDateFormatProvider(), format, this);
             return mdtoString;
         }

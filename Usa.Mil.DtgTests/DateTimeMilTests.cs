@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Usa.Military.DtgTests.Properties;
 
 namespace Usa.Mil.Dtg.Tests
 {
@@ -25,7 +26,7 @@ namespace Usa.Mil.Dtg.Tests
         public void GetMilDateFromStringTest()
         {
             string dtgString = "07142509 Z OCT 2017";
-            string format = "ddHHmmss dtz MMM yyyy";
+            string format = "ddHHmmss " + Settings.Default.DateTimeGroupTimeZoneFormatString + " MMM yyyy";
 
             IMilDate mdto = DateTimeMil.GetMilDateFromString(dtgString);
             if (mdto.MilDateOffset.HasValue)
