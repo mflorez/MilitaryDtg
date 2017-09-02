@@ -8,8 +8,10 @@ using System.Threading.Tasks;
 namespace Usa.Mil.Dtg
 {
     /// <summary>
-    /// Custom IMilDate formatter.  Use "dtz" to insert military time zone abbreviation.  
-    /// MilDateFormatProvider uses same string formats as System.DateTimeOffset.
+    /// Custom IMilDate formatter.  
+    /// Use Properties.Settings.Default.DateTimeGroupTimeZoneFormatString
+    /// value to insert military time zone abbreviation.  MilDateFormatProvider uses 
+    /// same string formats as System.DateTimeOffset type.
     /// </summary>
     public class MilDateFormatProvider : IFormatProvider, ICustomFormatter
     {
@@ -19,7 +21,8 @@ namespace Usa.Mil.Dtg
         }
 
         /// <summary>
-        /// Adds the "dtz" string value to allow for Military Date Time Group (DTG) string formats.
+        /// Adds the Properties.Settings.Default.DateTimeGroupTimeZoneFormatString
+        /// value to allow for Military Date Time Group (DTG) string formats.
         /// </summary>
         /// <param name="format"></param>
         /// <param name="arg"></param>
