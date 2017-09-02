@@ -25,6 +25,8 @@ namespace Usa.Mil.Dtg.Tests
         public void GetMilDateFromStringTest()
         {
             string dtgString = "07142509 Z OCT 2017";
+            string format = "ddHHmmss dtz MMM yyyy";
+
             IMilDate mdto = DateTimeMil.GetMilDateFromString(dtgString);
             if (mdto.MilDateOffset.HasValue)
             {
@@ -35,6 +37,8 @@ namespace Usa.Mil.Dtg.Tests
                 Assert.AreEqual(Mil.Zulu, mdto.MilTimeZone.MilTimeZoneName);
                 Assert.AreEqual(10, mdto.MilDateOffset.Value.Month);
                 Assert.AreEqual(2017, mdto.MilDateOffset.Value.Year);
+                Assert.AreEqual(dtgString, mdto.ToString().ToUpper());
+                Assert.AreEqual(dtgString, mdto.ToString(format).ToUpper());
             }
            
             dtgString = "07ZOCT17";

@@ -10,5 +10,6 @@ namespace Usa.Mil.Dtg
     {
         IMilTimeZone MilTimeZone { get; set; }
         DateTimeOffset? MilDateOffset { get; set; }
+        string ToString(string format);     
     }
 }
