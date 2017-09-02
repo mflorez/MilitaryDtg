@@ -52,6 +52,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="DateTimeMilTests.cs" />
+    <Compile Include="MilDateFormatProviderTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
