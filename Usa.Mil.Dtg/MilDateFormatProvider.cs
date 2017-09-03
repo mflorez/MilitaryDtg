@@ -38,8 +38,9 @@ namespace Usa.Mil.Dtg
 
             if (arg is IMilDate)
             {
+                char repChar = '*';
                 string dtgTimeZone = Properties.Settings.Default.DateTimeGroupTimeZoneFormatString;
-                string replaceString = Properties.Settings.Default.DateTimeGroupTimeZoneReplaceString;
+                string replaceString = String.Empty.PadRight(dtgTimeZone.Length, repChar);
                 IMilDate milDate = arg as IMilDate;
                 DateTimeOffset? dto = milDate.MilDateOffset;
                 mildateString = dto.Value.ToString(thisFmt.Replace(dtgTimeZone, replaceString)).Replace(replaceString, milDate.MilTimeZone.Abbreviation);

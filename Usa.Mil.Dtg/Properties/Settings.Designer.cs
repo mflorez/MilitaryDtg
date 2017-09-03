@@ -31,17 +31,5 @@ namespace Usa.Mil.Dtg.Properties {
                 return ((string)(this["DateTimeGroupTimeZoneFormatString"]));
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("***")]
-        public string DateTimeGroupTimeZoneReplaceString {
-            get {
-                return ((string)(this["DateTimeGroupTimeZoneReplaceString"]));
-            }
-            set {
-                this["DateTimeGroupTimeZoneReplaceString"] = value;
-            }
-        }
     }
 }
