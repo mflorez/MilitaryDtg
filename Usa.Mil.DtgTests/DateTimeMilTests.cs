@@ -15,10 +15,10 @@ namespace Usa.Mil.Dtg.Tests
         [TestMethod()]
         public void GetMilDateTest()
         {
-            string milZoneAbbr = Mil.TimeZoneAbbreviationToOffsetVal.C.ToString();
+            string milZoneAbbr = Mil.TimeZoneAbbreviation.C;
             DateTime dt = new DateTime(2012, 4, 14, 7, 8, 11);
             IMilDate milDtgOffset = DateTimeMil.GetMilDate(dt, milZoneAbbr);
-            Assert.AreEqual(Mil.Charlie, milDtgOffset.MilTimeZone.MilTimeZoneName);
+            Assert.AreEqual(Mil.Alphabet.Charlie, milDtgOffset.MilTimeZone.MilTimeZoneName);
             Assert.AreEqual(milZoneAbbr, milDtgOffset.MilTimeZone.Abbreviation);
         }
 
@@ -35,7 +35,7 @@ namespace Usa.Mil.Dtg.Tests
                 Assert.AreEqual(14, mdto.MilDateOffset.Value.Hour);
                 Assert.AreEqual(25, mdto.MilDateOffset.Value.Minute);
                 Assert.AreEqual(9, mdto.MilDateOffset.Value.Second);
-                Assert.AreEqual(Mil.Zulu, mdto.MilTimeZone.MilTimeZoneName);
+                Assert.AreEqual(Mil.Alphabet.Zulu, mdto.MilTimeZone.MilTimeZoneName);
                 Assert.AreEqual(10, mdto.MilDateOffset.Value.Month);
                 Assert.AreEqual(2017, mdto.MilDateOffset.Value.Year);
                 Assert.AreEqual(dtgString, mdto.ToString().ToUpper());
@@ -47,7 +47,7 @@ namespace Usa.Mil.Dtg.Tests
             {
                 mdto = DateTimeMil.GetMilDateFromString(dtgString);
                 Assert.AreEqual(7, mdto.MilDateOffset.Value.Day);
-                Assert.AreEqual(Mil.Zulu, mdto.MilTimeZone.MilTimeZoneName);
+                Assert.AreEqual(Mil.Alphabet.Zulu, mdto.MilTimeZone.MilTimeZoneName);
                 Assert.AreEqual(10, mdto.MilDateOffset.Value.Month);
                 Assert.AreEqual(2017, mdto.MilDateOffset.Value.Year);
             }
@@ -60,7 +60,7 @@ namespace Usa.Mil.Dtg.Tests
                 Assert.AreEqual(13, mdto.MilDateOffset.Value.Hour);
                 Assert.AreEqual(45, mdto.MilDateOffset.Value.Minute);
                 Assert.AreEqual(0, mdto.MilDateOffset.Value.Second);
-                Assert.AreEqual(Mil.Charlie, mdto.MilTimeZone.MilTimeZoneName);
+                Assert.AreEqual(Mil.Alphabet.Charlie, mdto.MilTimeZone.MilTimeZoneName);
                 Assert.AreEqual(11, mdto.MilDateOffset.Value.Month);
                 Assert.AreEqual(2017, mdto.MilDateOffset.Value.Year);
             }

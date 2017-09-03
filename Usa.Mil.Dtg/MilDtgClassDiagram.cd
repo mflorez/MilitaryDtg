@@ -16,30 +16,23 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="Usa.Mil.Dtg.MilDateFormatProvider" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="4" Y="0.5" Width="1.5" />
+    <Position X="0.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAggAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAggAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>MilDateFormatProvider.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="Usa.Mil.Dtg.Mil" Collapsed="true">
-    <Position X="0.5" Y="1.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>QAaAAEAAAKVgAQgAACFwAAIAQABAAJAAAAIAABAAQgA=</HashCode>
-      <FileName>Mil.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Usa.Mil.Dtg.MilDate" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="2.25" Y="1.5" Width="1.5" />
+    <Position X="4" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAACAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAGAAAAAAAAAQAAAAAAAAAAAAAAAAI=</HashCode>
       <FileName>MilDate.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="Usa.Mil.Dtg.MilTimeZone" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="4" Y="1.5" Width="1.5" />
+    <Position X="2.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAhAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
       <FileName>MilTimeZone.cs</FileName>
@@ -47,28 +40,28 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="Usa.Mil.Dtg.StringExtensions" Collapsed="true">
-    <Position X="0.5" Y="2.5" Width="1.5" />
+    <Position X="4" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAA=</HashCode>
       <FileName>StringExtensions.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="Usa.Mil.Dtg.IDtgTransform" Collapsed="true">
-    <Position X="0.5" Y="3.75" Width="1.5" />
+    <Position X="0.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAQAAAJAAAAAAgAAAAAAIAAAAAACIEAAAAAAAAAAA=</HashCode>
       <FileName>IDtgTransform.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Usa.Mil.Dtg.IMilDate" Collapsed="true">
-    <Position X="2.25" Y="3.75" Width="1.5" />
+    <Position X="2.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAACAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAGAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IMilDate.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Usa.Mil.Dtg.IMilTimeZone" Collapsed="true">
-    <Position X="4" Y="3.75" Width="1.5" />
+    <Position X="4" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAhAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
       <FileName>IMilTimeZone.cs</FileName>

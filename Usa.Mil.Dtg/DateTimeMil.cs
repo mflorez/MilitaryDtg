@@ -17,12 +17,12 @@ namespace Usa.Mil.Dtg
         static DateTimeMil()
         {
             milTimeZones = new List<IMilTimeZone>();
-            foreach (var value in Enum.GetValues(typeof(Mil.TimeZoneAbbreviationToOffsetVal)))
+            foreach (var value in Enum.GetValues(typeof(Mil.TimeZoneOffset)))
             {
                 int intVal = (int)value;
                 string strVal = value.ToString();
                 TimeZoneInfo tZ = Mil.SystemTimeZones.Where(i => i.BaseUtcOffset.Hours.Equals(intVal)).FirstOrDefault();                
-                String mTName = Mil.MilZoneNames.Where(z => z.StartsWith(strVal, StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault();
+                String mTName = Mil.TimeZoneNames.Where(z => z.StartsWith(strVal, StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault();
                 milTimeZones.Add(new MilTimeZone() { TimeZoneInfo = tZ, Abbreviation = strVal, Offset = intVal, MilTimeZoneName = mTName });
             }
         }
