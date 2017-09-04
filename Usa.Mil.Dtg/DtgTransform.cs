@@ -153,7 +153,9 @@ namespace Usa.Mil.Dtg
             int year = 0;
             if (yearPart.Length == 2)
             {
-                year = Convert.ToInt32(yearPart) + 2000;
+                // Adheres to current regional settings as defined in Control Panel (or group policy): 
+                // When a two-digit year is entered, interpret it as a year between 1970 and 2069.
+                year = CultureInfo.CurrentCulture.Calendar.ToFourDigitYear(Convert.ToInt32(yearPart));
             }
             else if (yearPart.Length == 4)
             {
