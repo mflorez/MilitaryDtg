@@ -3,7 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="DateTimeGroupTimeZoneFormatString" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">dtz</Value>
+      <Value Profile="(Default)">[DTZ]</Value>
+    </Setting>
+    <Setting Name="DefaultDateTimeGroupStringFormat" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ddHHmmss [DTZ] MMM yyyy</Value>
     </Setting>
   </Settings>
 </SettingsFile>

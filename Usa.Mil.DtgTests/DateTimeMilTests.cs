@@ -1,11 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Usa.Mil.Dtg;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Usa.Military.DtgTests.Properties;
+using Usa.Mil.Dtg.Properties;
 
 namespace Usa.Mil.Dtg.Tests
 {
@@ -26,7 +21,7 @@ namespace Usa.Mil.Dtg.Tests
         public void GetMilDateFromStringTest()
         {
             string dtgString = "07142509 Z OCT 2017";
-            string format = "ddHHmmss " + Settings.Default.DateTimeGroupTimeZoneFormatString + " MMM yyyy";
+            string format = Settings.Default.DefaultDateTimeGroupStringFormat;
 
             IMilDate mdto = DateTimeMil.GetMilDateFromString(dtgString);
             if (mdto.MilDateOffset.HasValue)

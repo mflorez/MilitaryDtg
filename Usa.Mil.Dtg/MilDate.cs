@@ -27,7 +27,7 @@ namespace Usa.Mil.Dtg
         /// <returns></returns>
         public override string ToString()
         {
-            string format = "{0:ddHHmmss " + Settings.Default.DateTimeGroupTimeZoneFormatString + " MMM yyyy}";
+            string format = "{0:" + Settings.Default.DefaultDateTimeGroupStringFormat + "}";
             string mdtoString = String.Format(new MilDateFormatProvider(), format, this);
             return mdtoString;
         }

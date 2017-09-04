@@ -13,7 +13,7 @@ namespace Usa.Mil.Dtg.Properties {
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "14.0.0.0")]
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+    public sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
         
@@ -25,10 +25,22 @@ namespace Usa.Mil.Dtg.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("dtz")]
+        [global::System.Configuration.DefaultSettingValueAttribute("[DTZ]")]
         public string DateTimeGroupTimeZoneFormatString {
             get {
                 return ((string)(this["DateTimeGroupTimeZoneFormatString"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("ddHHmmss [DTZ] MMM yyyy")]
+        public string DefaultDateTimeGroupStringFormat {
+            get {
+                return ((string)(this["DefaultDateTimeGroupStringFormat"]));
+            }
+            set {
+                this["DefaultDateTimeGroupStringFormat"] = value;
             }
         }
     }
